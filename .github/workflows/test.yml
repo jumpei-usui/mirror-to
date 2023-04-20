@@ -9,7 +9,7 @@ on:
     types:
       -closed
 
-environment: 
+environment: ${{ github.base_ref }}
 
 jobs:
   test-job:
