@@ -7,13 +7,12 @@ on:
       - stg
       - prd
     types:
-      -closed
-
-environment: ${{ github.base_ref }}
+      - closed
 
 jobs:
   test-job:
     runs-on: ubuntu-latest
+    environment: ${{ github.base_ref }}
     steps:
       - name: test run
         run: |
