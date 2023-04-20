@@ -9,9 +9,13 @@ on:
     types:
       -closed
 
+environment: ${{ github.base_ref }}
+
 jobs:
   test-job:
     runs-on: ubuntu-latest
     steps:
       - name: test run
-        run: echo ${{ vars.TEST_VAR }}
+        run: |
+          echo ${{ vars.TEST_VAR }}
+          echo ${{ github.base_ref }}
