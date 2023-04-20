@@ -7,7 +7,7 @@ on:
       - stg
       - prd
     types:
-      -closed
+      - closed
 
 environment: ${{ github.base_ref }}
 
