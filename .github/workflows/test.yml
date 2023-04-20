@@ -1,0 +1,21 @@
+name: Test
+
+on:
+  pull_request:
+    branches:
+      - dev
+      - stg
+      - prd
+    types:
+      -closed
+
+environment: ${{ github.base_ref }}
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test run
+        run: |
+          echo ${{ vars.TEST_VAR }}
+          echo ${{ github.base_ref }}
